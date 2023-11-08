@@ -46,6 +46,7 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 - `cd /path/to/Python-OC-Lettings-FR`
 - `source venv/bin/activate`
 - `flake8`
+- for flake8 html report `flake8 --format=html --htmldir=flake-report`
 
 #### Tests unitaires
 
