@@ -54,6 +54,12 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 - `source venv/bin/activate`
 - `pytest`
 
+#### Tests de couverture
+
+Pour générer un rapport html des tests :
+
+- ```coverage html --skip-covered```
+
 #### Base de données
 
 - `cd /path/to/Python-OC-Lettings-FR`

@@ -7,8 +7,10 @@ path_csv = "data_csv/"
 
 
 def data_transfer(src, dst):
-    '''Transfer datas from source tables in sqlite3 and update to CSV and write
-       in destination tables in sqlite3'''
+    """
+    Transfer datas from source tables in sqlite3 and update to CSV and write
+    in destination tables in sqlite3.
+    """
     # Extract from table source :
     con = sqlite3.connect(path_db)
     data = pd.read_sql_query(f"SELECT * FROM {src}", con)
