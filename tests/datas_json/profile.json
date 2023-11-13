@@ -1,0 +1,22 @@
+[
+    {
+        "id":1,
+        "favorite_city":"Buenos Aires",
+        "user_id":5
+    },
+    {
+        "id":2,
+        "favorite_city":"Barcelona",
+        "user_id":4
+    },
+    {
+        "id":3,
+        "favorite_city":"Budapest",
+        "user_id":3
+    },
+    {
+        "id":4,
+        "favorite_city":"Berlin",
+        "user_id":2
+    }
+]
