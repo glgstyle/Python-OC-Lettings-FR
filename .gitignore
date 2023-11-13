@@ -11,5 +11,3 @@ venv
 db.sqlite3
 .vscode
 flake-report/
-.coverage
-.coveragerc

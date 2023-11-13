@@ -1,0 +1,18 @@
+[run]
+omit = tests/*
+
+[report]
+omit = tests/* 
+       lettings/admin.py
+       lettings/apps.py
+       lettings/urls.py
+       oc_lettings_site/settings.py
+       oc_lettings_site/urls.py
+       oc_lettings_site/migrations/0001_initial.py	
+       oc_lettings_site/asgi.py
+       oc_lettings_site/wsgi.py
+       profiles/admin.py
+       profiles/urls.py
+       profiles/apps.py
+       manage.py
+       data_transfer.py
