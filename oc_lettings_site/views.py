@@ -10,6 +10,7 @@ def index(request):
     :template:`index.html`
 
     """
+    print("////////hello!")
     return render(request, 'index.html')
 
 

@@ -31,6 +31,8 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 - Confirmer que la version de l'interpréteur Python est la version 3.6 ou supérieure `python --version`
 - Confirmer que la commande `pip` exécute l'exécutable pip dans l'environnement virtuel, `which pip`
 - Pour désactiver l'environnement, `deactivate`
+- Créer un fichier .env à la racine du projet
+- Copier le contenu du fichier.env_sample et le coller dans le fichier .env  
 
 #### Exécuter le site
 

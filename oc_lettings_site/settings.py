@@ -63,15 +63,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.messages.context_processors.messages',
             ],
-            # "loaders": [
-            #     (
-            #         "django.template.loaders.cached.Loader",
-            #         [
-            #             "django.template.loaders.filesystem.Loader",
-            #             "django.template.loaders.app_directories.Loader",
-            #             "path.to.custom.Loader",
-            #         ],
-            #     ),
+            # 'loaders': [
+            #     'django.template.loaders.app_directories.Loader',
+            #     'django.template.loaders.filesystem.Loader',
+ 
             # ],
         },
     },
