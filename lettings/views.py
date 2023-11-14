@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Letting
 
 
-def lettings_index(request):
+def index(request):
     """
     Display an index with a list of :model:`lettings.letting`.
 
@@ -13,12 +13,12 @@ def lettings_index(request):
 
     **Template:**
 
-    :template:`lettings_index.html`
+    :template:`lettings/index.html`
 
     """
     lettings_list = Letting.objects.all()
     context = {'lettings_list': lettings_list}
-    return render(request, 'lettings_index.html', context)
+    return render(request, 'index.html', context)
 
 
 def letting(request, letting_id):
