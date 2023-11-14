@@ -35,3 +35,32 @@ def data_transfer(src, dst):
 data_transfer('oc_lettings_site_address', 'lettings_address')
 data_transfer('oc_lettings_site_profile', 'profiles_profile')
 data_transfer('oc_lettings_site_letting', 'lettings_letting')
+
+
+# to transfer in json for example :
+# path_db = "tests/oc-lettings-site-tests.sqlite3"
+# path_json = "tests/datas_json/"
+
+
+# def data_transfer_to_json(src):
+#     """
+#     Transfer datas from source tables in sqlite3 and save to json.
+#     """
+#     # Extract from table source :
+#     con = sqlite3.connect(path_db)
+#     data = pd.read_sql_query(f"SELECT * FROM {src}", con)
+#     con.close()
+
+#     # JSON naming
+#     name = src
+#     new = name.split('_')
+#     new_name = new[-1]
+#     json_file = path_json + f'{new_name}.json'
+
+#     # Transform and save to JSON
+#     data.to_json(json_file, indent=4, orient='records')
+
+
+# data_transfer_to_json('lettings_address')
+# data_transfer_to_json('profiles_profile')
+# data_transfer_to_json('lettings_letting')
