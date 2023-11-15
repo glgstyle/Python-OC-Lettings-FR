@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import Profile
+from oc_lettings_site.utils import (send_to_sentry_exception, send_to_sentry_message)
+from oc_lettings_site.logger import capture_sentry_message
 
 
 def profiles_index(request):
@@ -16,11 +18,15 @@ def profiles_index(request):
     :template:`profiles_index.html`
 
     """
+    send_to_sentry_message("profiles", request.user,
+                           "Consultation de la liste des profiles")
     profiles_list = Profile.objects.all()
     context = {'profiles_list': profiles_list}
     return render(request, 'profiles/index.html', context)
 
 
+# capture Exception and send to capture_sentry_message
+@capture_sentry_message
 def profile(request, username):
     """
     Display an individual profile of :model:`profiles.profile`.
