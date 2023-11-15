@@ -6,9 +6,8 @@ venv
 /.env
 /venv
 /.venv
+/staticfiles
 .pytest_cache
 db.sqlite3
 .vscode
 flake-report/
-.coverage
-.coveragerc
