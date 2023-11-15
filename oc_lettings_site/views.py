@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from oc_lettings_site.utils import send_to_sentry_exception
 
 def index(request):
     """
@@ -24,6 +24,9 @@ def custom_404(request, exception):
     :template:`404.html`
 
     """
+    send_to_sentry_exception("Page Not Found",
+                             f"{request.path_info}{request.META}", exception)
+    
     return render(request, '404.html', status=404)
 
 

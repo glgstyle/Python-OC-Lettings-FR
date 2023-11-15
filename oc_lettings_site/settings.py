@@ -129,17 +129,20 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-STORAGES = {
+if config('DEBUG') == False:
+    STORAGES = {
 
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
+        "staticfiles": {
+            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        },
+    }
+else:
+    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 sentry_sdk.init(
     dsn=config('SECRET_KEY_SENTRY'),
     max_breadcrumbs=50,
-    debug=True,
+    # debug=True,
     # Enable performance monitoring
     enable_tracing=True,
     # Set traces_sample_rate to 1.0 to capture 100%
