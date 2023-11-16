@@ -67,7 +67,7 @@ TEMPLATES = [
             # 'loaders': [
             #     'django.template.loaders.app_directories.Loader',
             #     'django.template.loaders.filesystem.Loader',
- 
+
             # ],
         },
     },
@@ -86,7 +86,7 @@ DATABASES = {
     }
 }
 
-DEFAULT_AUTO_FIELD='django.db.models.AutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -105,7 +105,21 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+# # Security in production
+# if config('DEBUG') == False :
+SECURE_HSTS_SECONDS = 31536000
 
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+SECURE_HSTS_PRELOAD = True
+
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+SECURE_SSL_REDIRECT = True
+
+SESSION_COOKIE_SECURE = True
+
+CSRF_COOKIE_SECURE = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
@@ -129,7 +143,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-if config('DEBUG') == False:
+if not config('DEBUG'):
     STORAGES = {
 
         "staticfiles": {
@@ -152,14 +166,13 @@ sentry_sdk.init(
     # of sampled transactions.
     # We recommend adjusting this value in production.
     profiles_sample_rate=1.0,
-        integrations=[
+    integrations=[
         DjangoIntegration(
             transaction_style='url',
             middleware_spans=True,
             signals_spans=False,
             cache_spans=False,
-        ),
-    ],
+            ), ],
     environment="production",
 
 )

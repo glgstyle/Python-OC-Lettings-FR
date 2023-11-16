@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from .models import Letting
-from oc_lettings_site.utils import (send_to_sentry_exception,
-                                      send_to_sentry_message)
+from oc_lettings_site.utils import send_to_sentry_message
 from oc_lettings_site.logger import capture_sentry_message
+
 
 def index(request):
     """
@@ -42,7 +42,7 @@ def letting(request, letting_id):
     :template:`letting.html`
 
     """
-    
+
     letting = Letting.objects.get(id=letting_id)
     context = {
         'title': letting.title,
