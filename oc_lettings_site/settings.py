@@ -23,8 +23,9 @@ SECRET_KEY = "6546csC54Z§§S§S§!!!eccz544"
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
-# ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['127.0.0.1', 'localhost','https://lettings.onrender.com/']
+ALLOWED_HOSTS = ['*']
+
 
 # Application definition
 
