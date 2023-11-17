@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG')
+DEBUG = bool(os.environ.get('DEBUG'))
 # DEBUG = False
 # commentaires
 
@@ -132,7 +132,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-if not os.environ.get('DEBUG'):
+if not DEBUG:
     STORAGES = {
 
         "staticfiles": {
