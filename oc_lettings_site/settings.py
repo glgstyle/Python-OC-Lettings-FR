@@ -1,10 +1,13 @@
 import os
 
 from pathlib import Path
-from decouple import config
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
+from dotenv import load_dotenv
 
+
+# Load env
+load_dotenv()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -13,10 +16,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = os.environ.get('DEBUG', cast=bool)
 # DEBUG = False
 # commentaires
 
@@ -129,7 +132,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-if not config('DEBUG'):
+if not os.environ.get('DEBUG'):
     STORAGES = {
 
         "staticfiles": {
@@ -140,7 +143,7 @@ else:
     STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 sentry_sdk.init(
-    dsn=config('SECRET_KEY_SENTRY'),
+    dsn=os.environ.get('SECRET_KEY_SENTRY'),
     max_breadcrumbs=50,
     # debug=True,
     # Enable performance monitoring
