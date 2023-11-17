@@ -2,13 +2,6 @@ from django.urls import reverse
 import pytest
 from pytest_django.asserts import assertTemplateUsed
 
-from django.test import TestCase
-from django.test.client import RequestFactory
-
-from oc_lettings_site import urls
-from oc_lettings_site.views import custom_404, custom_500
-
-
 
 def test_get_index(client):
     response = client.get(reverse('index'))
