@@ -13,5 +13,3 @@ def send_to_sentry_message(tag1, tag2, message):
 
     set_tag(tag1, tag2)
     capture_message(message)
-
-

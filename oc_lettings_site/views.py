@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from oc_lettings_site.utils import send_to_sentry_exception
 
+
 def index(request):
     """
     Display an index with two clickable buttons lettings and profiles.
@@ -26,7 +27,7 @@ def custom_404(request, exception):
     """
     send_to_sentry_exception("Page Not Found",
                              f"{request.path_info}{request.META}", exception)
-    
+
     return render(request, '404.html', status=404)
 
 

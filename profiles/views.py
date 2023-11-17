@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Profile
-from oc_lettings_site.utils import (send_to_sentry_exception, send_to_sentry_message)
+from oc_lettings_site.utils import send_to_sentry_message
 from oc_lettings_site.logger import capture_sentry_message
 
 
