@@ -45,7 +45,7 @@ jobs:
           name: Build docker image
           # build l'image avec le nom et la version(donné sur Circle/Ci)
           command:
-            docker build -t $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_VERSION .
+            docker build -t $DOCKER_IMAGE_NAME:1.0.0 .
       - run:
           name: Connect to Docker Hub
           # login à docker (donner le password et le username)
@@ -55,8 +55,8 @@ jobs:
           name: Push docker image
           # push la version de l'image buildé vers hub
           command:
-            docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_VERSION $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_VERSION |
-            docker push $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_VERSION 
+            docker tag $DOCKER_IMAGE_NAME:1.0.0 $DOCKER_IMAGE_NAME:1.0.0 |
+            docker push $DOCKER_IMAGE_NAME:1.0.0
 
   deploy-from-dockerhub-to-render:
     docker:
