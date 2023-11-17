@@ -40,9 +40,9 @@ def test_get_profile(client, django_db_setup):
 @pytest.mark.django_db
 def test_500_get_wrong_letting(client, django_db_setup):
     response = client.get(reverse('letting', kwargs={'letting_id': 100}), follow=True)
-    assert response.status_code == 500 
- 
- 
+    assert response.status_code == 500
+
+
 @pytest.mark.django_db
 def test_404(client):
     response = client.get("idont_exits")
