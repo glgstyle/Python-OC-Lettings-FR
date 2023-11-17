@@ -106,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 # # Security in production
-# if config('DEBUG') == False :
+# if not config('DEBUG'):
 SECURE_HSTS_SECONDS = 31536000
 
 SECURE_CONTENT_TYPE_NOSNIFF = True
