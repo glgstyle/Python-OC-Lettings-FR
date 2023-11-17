@@ -3,6 +3,7 @@ import pytest
 from pytest_django.asserts import assertTemplateUsed
 
 
+# comment
 def test_get_index(client):
     response = client.get(reverse('index'))
     assert response.status_code == 200

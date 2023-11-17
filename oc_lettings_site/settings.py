@@ -22,7 +22,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # DEBUG = bool(os.environ.get('DEBUG'))
 
 DEBUG = False
-# commentaires
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 # ALLOWED_HOSTS = ['*']
