@@ -16,8 +16,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = os.environ.get('SECRET_KEY')
-SECRET_KEY = "6546csC54Z§§S§S§!!!eccz544"
+SECRET_KEY = os.environ.get('SECRET_KEY')
+# SECRET_KEY = "6546csC54Z§§S§S§!!!eccz544"
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = bool(os.environ.get('DEBUG'))
 
@@ -27,9 +27,9 @@ DEBUG = False
 #                  'localhost',
 #                  'https://lettings.onrender.com/',
 #                  '*']
-# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']
 
-ALLOWED_HOSTS = [socket.gethostbyname('localhost')]
+# ALLOWED_HOSTS = [socket.gethostbyname('localhost')]
 
 # Application definition
 
