@@ -217,6 +217,13 @@ Mais il faut pour cela intégrer le sentry-sdk et la variable dans settings.py.
   - Docker
   - Sentry
 
+### Read The Docs
+
+Pour ajouter du contenu à la documentation, après avoir créé les fichiers rst, 
+générer les fichiers html avec la commande suivante :
+
+  `doc\make.bat html`
+
 
 ### Contribuer au project
 
@@ -226,13 +233,3 @@ Oc Lettings n'est pas un projet open source. Veuillez nous contacter pour contri
 ### Auteur
 
     Gwénaëlle
-
-Voir la section :doc:`installation` pour plus d'informations, incluant
-l':ref:`installation` du projet.
-
-   a_propos 
-      technologies_et_langages
-      Description de la base de données
-      Description des interfaces de programmation
-   Déploiement
-      Procédures de déploiement et de gestion de l'application
