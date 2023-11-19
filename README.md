@@ -126,15 +126,24 @@ SECRET_KEY='fp$9^59[3]sriajg$_%]=5trot9g!1qa@ew(o-1#@=&4%=hp4
 
 ### Description du fonctionnement du Pipeline CircleCi:
 
-  Après avoir mergé une pull request sur la branche master, une série d'étapes appelée workflows va démarrer:
-    - 'run_tests_and_build_docker' du Pipeline (le dépôt) Python-OC-Lettings-FR.
-  Il est décomposé en différents 'jobs':
-    - lance les tests avec pytest
-    - contrôle le linting PEP8 avec Flake8
-    - build-push-docker :
-        se met à jour (le build) seulement si on modifie la branche master à la condition que les tests soient valides, va créer une image docker et l'uploader sur le docker hub.
-    - deploy-from-dockerhub-to-render :
-        va lancer le build de l'application sur render via gitHub à la condition que le build-push-docker soit ok
+  <u>Modification sur n'importe qu'elle branche :</u> 
+
+   - 2 premiers jobs s'exécutent, le pytest et flake8
+
+  <u>Modification sur la branche master :</u>
+
+  une série d'étapes appelée workflows démarre:
+
+  - 'run_tests_and_build_docker' du Pipeline (du dépôt) Python-OC-Lettings-FR.
+
+  Elle est décomposé en différents 'jobs':
+
+  - lance les tests avec pytest
+  - contrôle le linting PEP8 avec Flake8
+  - build-push-docker :
+      se met à jour (le build) seulement si on modifie la branche master à la condition que les tests soient valides, va créer une image docker et l'uploader sur le docker hub.
+  - deploy-from-dockerhub-to-render :
+      va lancer le build de l'application sur render via gitHub à la condition que le build-push-docker soit ok
 
 
 #### CircleCi :
@@ -146,14 +155,16 @@ Dans Projets:
 Cliquez sur Project Settings (Les 3 petits points)
 Cliquez sur Environment Variables
 Cliquez sur Add Environment Variables
-Nom des Variables	Description	Valeurs à renseigner
-DEBUG False
-DOCKER_HUB_USER_ID	User Docker Hub	glgstyle
-DOCKER_HUB_PASSWORD	 Dockerhub password	1321654654654651231654
-DEPLOY_HOOK	Token Render	1321654654654651231654
-DOCKER_IMAGE_NAME Name of Docker Image glgstyle/lettings-image
-DOCKER_IMAGE_VERSION Version of Docker Image 1.0.0
-SECRET_KEY	DJANGO SECRET_KEY	fp$9^593hs98ajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s
+
+Nom des Variables |	Description |	Valeurs à renseigner
+| :--------------- |:---------------| :-----|
+DEBUG | Debug Mode | False
+DOCKER_HUB_USER_ID | User Docker Hub | glgstyle
+DOCKER_HUB_PASSWORD |	Dockerhub password | 1321654654654651231654
+DEPLOY_HOOK |	 Render Token | 1321654654654651231654
+DOCKER_IMAGE_NAME | Name of Docker Image | glgstyle/lettings-image
+DOCKER_IMAGE_VERSION | Version of Docker Image | 1.0.0
+SECRET_KEY | DJANGO SECRET_KEY | fp$9^593hs98ajg$_%=5trot9g!1qa@ew(o-1#@=&4%
 
 
 #### Github :
@@ -163,9 +174,11 @@ Github Repository permet de faire le versionning de notre projet/application.
 
 #### Docker Hub :
 
-Docker-Hub glgstyle Repository permet de stocker en ligne l'image docker de notre application.
+Docker-Hub glgstyle Repository permet de stocker en ligne l'image docker de
+ notre application.
 
-La commande unique pour récupération de l'application en local et son démarrage immédiat est :
+La commande unique pour récupération de l'application en local et son
+ démarrage immédiat est :
 
   `docker pull glgstyle/lettings-image`
 
@@ -174,38 +187,40 @@ glgstyle est le compte du Hub Docker, lettings-image est le nom de l'image
 
 #### Render :
 
-    Render permet d'heberger notre application. 
-    Info pour que l'application fonctionne, il faut définir plusieurs variables. C'est le workflows CircleCI qui s'en charge. Les variables sont :
+Render permet d'heberger notre application. 
+Info pour que l'application fonctionne, il faut définir plusieurs variables.
+C'est le workflows CircleCI qui s'en charge. Les variables sont :
 
-    DEBUG
-
-    PORT
-
-    SECRET_KEY
-
-    SECRET_KEY_SENTRY
+Nom des Variables |	Description |	Valeurs à renseigner
+| :--------------- |:---------------| :-----|
+DEBUG | Debug Mode | False
+PORT | Port Number | 8000
+SECRET_KEY | DJANGO SECRET_KEY | fp$9^593hs98ajg$_%=5trot9g!1qa@ew(o-1#@=&4%
+SECRET_KEY_SENTRY | Sentry secret key | $_%=5trot9g!1qa@ew(o-1#@
 
 
 #### Sentry :
-    Sentry permet de faire le monitoring de l'application.
 
-    Elle permet également de détecter des éventuels bug/issues.
+Sentry permet de faire le monitoring de l'application.
 
-    Mais il faut pour cela intégrer le sentry-sdk et la variable dans settings.py.
+Elle permet également de détecter des éventuels bug/issues.
+
+Mais il faut pour cela intégrer le sentry-sdk et la variable dans settings.py.
 
 
 ### Technologies
-    - Python v3.x+
-    - Django
-    - SQLite 
-    - Circle CI
-    - Docker
-    - Sentry
+
+  - Python v3.x+
+  - Django
+  - SQLite 
+  - Circle CI
+  - Docker
+  - Sentry
 
 
 ### Contribuer au project
 
-    Oc Lettings n'est pas un projet open source. Veuillez nous contacter pour contribuer avec vos propres fonctionnalités.
+Oc Lettings n'est pas un projet open source. Veuillez nous contacter pour contribuer avec vos propres fonctionnalités.
 
 
 ### Auteur

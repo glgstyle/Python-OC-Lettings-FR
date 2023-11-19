@@ -2,12 +2,12 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'Oc_lettings'
+copyright = '2023, Gwen'
+author = 'Gwenaëlle'
 
 release = '0.1'
-version = '0.1.0'
+version = '0.0.1'
 
 # -- General configuration
 
@@ -17,6 +17,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
+    'sphinx_copybutton',
 ]
 
 intersphinx_mapping = {
