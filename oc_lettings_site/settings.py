@@ -4,7 +4,7 @@ from pathlib import Path
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 from dotenv import load_dotenv
-import socket
+
 
 # Load env
 load_dotenv()
@@ -21,7 +21,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = bool(os.environ.get('DEBUG'))
 
-DEBUG = False
+# DEBUG = False
 
 # ALLOWED_HOSTS = ['127.0.0.1',
 #                  'localhost',
@@ -29,7 +29,6 @@ DEBUG = False
 #                  '*']
 ALLOWED_HOSTS = ['*']
 
-# ALLOWED_HOSTS = [socket.gethostbyname('localhost')]
 
 # Application definition
 
